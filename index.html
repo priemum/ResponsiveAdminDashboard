@@ -62,11 +62,88 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Criando o espaço onde fica o conteúdo principal da página -->
+        <div class="main">
+            <!--  Header -->
+            <div class="topbar">
+                <div class="toggle"> <!-- Botao para ativar o menu -->
+                    <ion-icon name="menu"></ion-icon>
+                </div>
+                <!-- Barra de Pesquisa -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search"></ion-icon>
+                    </label>
+                </div>
+                <!-- Espaço do Usuário -->
+                <div class="user">
+                    <img src="https://picsum.photos/40">
+                </div>
+            </div>
+            <!-- Cards -->
+            <div class="cardBox">
+                <div class="card"> <!-- Contador de visualizaçoes -->
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                
+                <div class="card"> <!-- Contador de vendas -->
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Sales</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                
+                <div class="card"> <!-- Contador de comentários -->
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comments</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+                
+                <div class="card"> <!-- Faturamento -->
+                    <div>
+                        <div class="numbers">$7.462</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
     </div>
 
     <!--Importando o script dos icones-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        //Criando funcionalidade para o botão de ativar o menu
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+    </script>
 
     <script>
         // Adiciona a classe com hover no item selecionado da lista

@@ -38,6 +38,11 @@ body{
     overflow: hidden;
 }
 
+/* Definindo o estilo da classe navigation quando for ativada */
+.navigation.active{
+width: 80px;
+}
+
 /* Definindo o estilo do elemento ul da classe container */
 .navigation ul{
     position: absolute;
@@ -93,6 +98,7 @@ body{
 
 /* Definindo estilo dos icones */
 .navigation ul li a .icon ion-icon{
+    padding-top: 15px;
     font-size: 1.75em;
 }
 
@@ -131,4 +137,144 @@ body{
     height: 50px;
     border-radius: 50%;
     box-shadow: 35px -35px 0 10px var(--white);
+}
+
+/* Definindo estilo do conteudo principal */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+/* Definindo o estilo do botao do menu quando ativo */
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+/* Definindo estilo do Header */
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Definindo estilo do botão que ativa o menu */
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+/* Definindo estilo da barra de pesquisa */
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{ /* Definindo o estilo do input */
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2)
+}
+
+.search label ion-icon{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.user{ /* Definindo estilo do usuário */
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{ /* Definindo estilo do icone */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Definindo estilo da caixa dos cards */
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+/* Definindo estilo dos cards */
+.cardBox .card{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Definindo estilo dos numeros */
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--blue)
+}
+
+/* Definindo estilo do nome dos cards */
+.cardBox .card .cardName{
+    color: var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+/* Definindo estilo do icone dos cards */
+.cardBox .card .iconBx{
+    font-size: 3.5em;
+    color: var(--black2);
+}
+
+/*Definindo efeito ao passar o mouse sobre o card */
+.cardBox .card:hover{
+    background: var(--blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx{
+    color: var(--white);
 }
