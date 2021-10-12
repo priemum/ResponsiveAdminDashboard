@@ -30,7 +30,7 @@ body{
 /* Definindo o estilo da classe navigation(Menu) */
 .navigation{
     position: fixed;
-    width: 300px;
+    width: 80px;
     height: 100%;
     background: var(--blue);
     border-left: 10px solid var(--blue);
@@ -40,7 +40,7 @@ body{
 
 /* Definindo o estilo da classe navigation quando for ativada */
 .navigation.active{
-width: 80px;
+width: 300px;
 }
 
 /* Definindo o estilo do elemento ul da classe container */
@@ -142,8 +142,8 @@ width: 80px;
 /* Definindo estilo do conteudo principal */
 .main{
     position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
+    width: calc(100% - 80px);
+    left: 80px;
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
@@ -151,8 +151,8 @@ width: 80px;
 
 /* Definindo o estilo do botao do menu quando ativo */
 .main.active{
-    width: calc(100% - 80px);
-    left: 80px;
+    width: calc(100% - 300px);
+    left: 300px;
 }
 
 /* Definindo estilo do Header */
@@ -277,4 +277,234 @@ width: 80px;
 .cardBox .card:hover .cardName,
 .cardBox .card:hover .iconBx{
     color: var(--white);
+}
+
+/*Definindo o estilo da lista de vendas*/
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    /*margin-top: 10px;*/
+}
+
+.details .recentOrders{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+/*Definindo estilo do Header dos cards da tabela*/
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2{ /*Titulo*/
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.btn{ /*Botao*/
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+.details table{ /*Tabela*/
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td{
+    font-weight: 600;
+}
+
+.details .recentOrders table thead tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentOrders table tr:last-child{
+    border-bottom: none;
+}
+
+.details .recentOrders table tbody tr:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
+.details .recentOrders table tr td{
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(2){
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(3){
+    text-align: center;
+}
+
+/*Definindo estilo do status das compras*/
+.status.delivered{
+padding: 2px 4px;
+background: #8de02c;
+color: var(--white);
+border-radius: 4px;
+font-size: 14px;
+font-weight: 500;
+}
+
+.status.return{
+padding: 2px 4px;
+background: #f00;
+color: var(--white);
+border-radius: 4px;
+font-size: 14px;
+font-weight: 500;
+}
+
+.status.pending{
+padding: 2px 4px;
+background: #f9ca3f;
+color: var(--white);
+border-radius: 4px;
+font-size: 14px;
+font-weight: 500;
+}
+
+.status.inprogress{
+padding: 2px 4px;
+background: #1795ce;
+color: var(--white);
+border-radius: 4px;
+font-size: 14px;
+font-weight: 500;
+}
+
+/* DEfinindo estilo dos clientes */
+.recentCustomers{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.recentCustomers .imgBx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.recentCustomers .imgBx img{ /*Imagem*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recentCustomers table tr:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+
+.recentCustomers table tr td{
+    padding: 12px 10px;
+}
+
+.recentCustomers table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.recentCustomers table tr td h4 span{
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.recentCustomers table tr:hover td h4 span{
+    color: var(--white);
+}
+
+/*Responsivo*/
+@media (max-width: 991px){
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        width: 300px;
+        left: 0;
+    }
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        left: 300px;
+    }
+    .cardBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .details{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .recentOrders{
+        overflow-x: auto;
+    }
+    .status.inprogress{
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px){
+    .cardBox{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .cardHeader h2{
+        font-size: 20px;
+    }
+    .user{
+        min-width: 40px;
+    }
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle{
+        z-index: 1001;
+    }
+    .main.active .toggle{
+        color: var(--white);
+    }
 }
